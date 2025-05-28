@@ -170,10 +170,21 @@ function editTodo(id) {
 // ----------------------------
 // App Init
 // ----------------------------
+function insertMockData() {
+    const todos = [
+        { id: Date.now(), text: "Buy milk", done: false },
+        { id: Date.now() + 1, text: "Wash dishes", done: false },
+        { id: Date.now() + 2, text: "Do laundry", done: false },
+    ];
+    if (loadTodos().length > 0) return;
+    saveTodos(todos);
+}
+
 function setupApp() {
     const form = document.getElementById("todo-form");
     form.addEventListener("submit", handleAddTodo);
     renderTodos();
+    insertMockData();
 }
 
 setupApp();
