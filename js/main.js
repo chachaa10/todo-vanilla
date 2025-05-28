@@ -172,9 +172,9 @@ function editTodo(id) {
 // ----------------------------
 function insertMockData() {
     const todos = [
-        { id: Date.now(), text: "Buy milk", done: false },
-        { id: Date.now() + 1, text: "Wash dishes", done: false },
-        { id: Date.now() + 2, text: "Do laundry", done: false },
+        { id: Date.now(), text: "👋 Welcome to Todo!", done: false },
+        { id: Date.now() + 1, text: "✅ Try marking me as done", done: false },
+        { id: Date.now() + 2, text: "✏️ Or edit this item", done: false },
     ];
     if (loadTodos().length > 0) return;
     saveTodos(todos);
