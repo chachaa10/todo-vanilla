@@ -163,6 +163,8 @@ function editTodo(id) {
     const saveButton = createSaveButton(input, todo, todos);
 
     li.replaceChildren(input, saveButton);
+
+    input.focus();
 }
 
 // ----------------------------
