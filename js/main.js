@@ -2,7 +2,9 @@
 // State Management
 // ----------------------------
 function loadTodos() {
-    return JSON.parse(localStorage.getItem("todos")) || [];
+    const todos = JSON.parse(localStorage.getItem("todos"));
+    // Return empty array if no todos exist
+    return todos || [];
 }
 
 function saveTodos(todos) {
@@ -19,7 +21,7 @@ function handleAddTodo(event) {
     if (!text) return;
 
     const todos = loadTodos();
-    todos.push({ id: Date.now(), text, done: false });
+    todos.push({ id: crypto.randomUUID(), text, done: false });
 
     saveTodos(todos);
     input.value = "";
@@ -176,14 +178,19 @@ function insertMockData() {
         { id: Date.now() + 1, text: "✅ Try marking me as done", done: false },
         { id: Date.now() + 2, text: "✏️ Or edit this item", done: false },
     ];
-    if (loadTodos().length > 0) return;
+
     saveTodos(todos);
+    localStorage.setItem("hasSeenMockData", "true"); // Mark as seen
 }
 
 function setupApp() {
     const form = document.getElementById("todo-form");
     form.addEventListener("submit", handleAddTodo);
-    insertMockData();
+
+    if (loadTodos().length === 0 && !localStorage.getItem("hasSeenMockData")) {
+        insertMockData();
+    }
+
     renderTodos();
 }
 
