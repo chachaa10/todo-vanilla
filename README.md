@@ -44,10 +44,16 @@ git clone https://github.com/chachaa10/todo-vanilla.git
 
 ```sh
 📦 todo-app
- ┣ 📄 index.html
- ┣ 📄 style.css
- ┣ 📄 script.js
- ┗ 📄 README.md
+├── css/
+│   └── style.css
+├── js/
+│   └── main.css
+├── .gitignore
+├── LICENSE
+├── index.html
+├── package.json
+├── README.md
+├── pnpm-lock.yaml
 ```
 
 ---
