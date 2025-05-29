@@ -183,8 +183,8 @@ function insertMockData() {
 function setupApp() {
     const form = document.getElementById("todo-form");
     form.addEventListener("submit", handleAddTodo);
-    renderTodos();
     insertMockData();
+    renderTodos();
 }
 
 setupApp();
