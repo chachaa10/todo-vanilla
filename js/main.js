@@ -174,9 +174,9 @@ function editTodo(id) {
 // ----------------------------
 function insertMockData() {
     const todos = [
-        { id: Date.now(), text: "👋 Welcome to Todo!", done: false },
-        { id: Date.now() + 1, text: "✅ Try marking me as done", done: false },
-        { id: Date.now() + 2, text: "✏️ Or edit this item", done: false },
+        { id: crypto.randomUUID(), text: "👋 Welcome to Todo!", done: false },
+        { id: crypto.randomUUID() + 1, text: "✅ Try marking me as done", done: false },
+        { id: crypto.randomUUID() + 2, text: "✏️ Or edit this item", done: false },
     ];
 
     saveTodos(todos);
